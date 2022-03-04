@@ -22,8 +22,9 @@ class StaffList extends Component {
       
     
       return (
-        <Card>
+        
           <div className='item'>
+              <Card>
           <CardBody>
             <CardTitle>Họ và tên: {staff.name}</CardTitle>
             <CardImg src={ staff.image} alt={staff.name} />
@@ -33,8 +34,8 @@ class StaffList extends Component {
             <CardText>Số ngày nghỉ còn lại:{staff.annualLeave}</CardText>
             <CardText>Số ngày đã làm thêm:{staff.overTime}</CardText>
           </CardBody>
-          </div>
         </Card>
+          </div>
           );
     else
       return (
