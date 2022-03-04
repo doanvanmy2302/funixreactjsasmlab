@@ -53,8 +53,7 @@ class StaffList extends Component {
     }
       else {
       return (
-        <div>
-            
+        <div> 
         </div>
       );
     }
