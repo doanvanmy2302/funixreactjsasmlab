@@ -19,10 +19,8 @@ class StaffList extends Component {
   renderStaff(staff) {
 
     if (staff != null)
-      
-    
-      return (
-        
+
+      return (       
           <div className='item'>
               <Card>
           <CardBody>
