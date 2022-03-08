@@ -40,9 +40,9 @@
 .form {
   display: flex;
 }
-.container-content{
+/* .container-content{
   padding-top:1%;
-}
+} */
 .add.form-group {
   margin: 0.9rem 0 0 5.5rem;
 }

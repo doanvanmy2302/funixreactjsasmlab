@@ -63,7 +63,7 @@ function Staffs(props) {
                    <AddStaff staffList={props.staffs} onStaff={onAddStaff}/>
                 </div>
 
-            <div className=" col-12 col-md-6 col-lg-6">
+            <div className=" col-12 col-md-10 col-lg-6">
           <Form onSubmit={submitSearch} className="form">
             <Input
               type="text"

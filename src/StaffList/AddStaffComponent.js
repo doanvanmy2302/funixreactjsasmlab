@@ -164,9 +164,10 @@ class AddStaff extends Component {
                       placeholder="từ 5 - 30 kí tự"
                       value={this.state.name}
                       onChange={this.handleInputChange}
-                      onBlur={this.handleBlur("name")}
                       valid={errors.name === ""}
                       invalid={errors.name !== ""}
+                      onBlur={this.handleBlur("name")}
+
                     />
                     <FormFeedback>{errors.name}</FormFeedback>
                   </Col>
