@@ -22,8 +22,9 @@ function RenderStaff ({item, onClick}) {
 };
 
 function Staffs(props) {
+  const storage = JSON.parse(localStorage.getItem('addStaff'))
     const [searchInput, setSearchInput] = useState("");
-    const [searchStaff, setSearchStaff] = useState(props.staffs);
+    const [searchStaff, setSearchStaff] = useState(storage || []);
     const submitSearch = (e) => {
         e.preventDefault();
         searchName(searchInput);
@@ -32,7 +33,7 @@ function Staffs(props) {
      
       const searchName = (value) => {
         if (value !== "") {
-          const result = props.staffs.filter((s) =>
+          const result = searchStaff.staffs.filter((s) =>
             s.name.toLowerCase().match(value.toLowerCase())
           )
           if (result.length > 0) {
@@ -45,7 +46,7 @@ function Staffs(props) {
       const onAddStaff = (staff) => {
         props.onAddStaff(staff);
       };
-    const list = searchStaff.map((staff) => {
+    const list = searchStaff.staffs.map((staff) => {
         return (
         <div key={staff.id} className="col-6 col-md-4 col-lg-2 staff">
             <RenderStaff onClick={props.onClick} item={staff} />

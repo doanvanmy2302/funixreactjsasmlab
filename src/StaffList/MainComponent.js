@@ -20,7 +20,9 @@ class Main extends Component {
         };}
         onAddStaff = (newStaff) => {
             this.setState({ staffs: [...this.state.staffs, newStaff] });
-            console.log(this.state)
+            console.log({ staffs: [...this.state.staffs, newStaff] })
+            const json = JSON.stringify({ staffs: [...this.state.staffs, newStaff] })
+            localStorage.setItem('addStaff',json)
     }
     
     render() {  
