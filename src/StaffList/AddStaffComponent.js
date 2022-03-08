@@ -34,13 +34,13 @@ class AddStaff extends Component {
         name: false,
         salaryScale: false,
         annualLeave: false,
-        overTime: false,
+        overTime:false,
       },
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleBlur = this.handleBlur.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
   }
 
   handleBlur = (field) => (e) => {
@@ -86,9 +86,9 @@ class AddStaff extends Component {
       errors.annualLeave = "Vui lòng không bỏ trống";
     
 
-    // validate salaryScale
+    // validate 
     if (
-      (this.state.touched.salaryScale && salaryScale.length > 3.0) ||
+      (this.state.touched.salaryScale && salaryScale.length > 3) ||
       salaryScale < 1.0
     )
       errors.salaryScale = "Hệ số lương phải từ 1.0 đến 3.0";
