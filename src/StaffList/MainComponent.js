@@ -20,6 +20,7 @@ class Main extends Component {
         };}
         onAddStaff = (newStaff) => {
             this.setState({ staffs: [...this.state.staffs, newStaff] });
+            console.log(this.state)
     }
     
     render() {  
