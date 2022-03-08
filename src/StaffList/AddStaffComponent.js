@@ -67,8 +67,8 @@ class AddStaff extends Component {
     });
   }
 
-  // validate khi người dùng nhập không đúng két quả
-  validate(name, salaryScale, annualLeave, overTime) {
+  // validate 
+   validate(name, salaryScale, annualLeave, overTime) {
     const errors = {
       name: "",
       salaryScale: "",
@@ -94,7 +94,7 @@ class AddStaff extends Component {
       errors.salaryScale = "Hệ số lương phải từ 1.0 đến 3.0";
     else if (
       this.state.touched.salaryScale &&
-      salaryScale.split("").filter((x) => x === ".").length !== 1
+     salaryScale.split("").filter((x) => x === ".").length !== 1 
     )
       errors.salaryScale = "Hệ số lương phải có dấu chấm ở giữa (ví dụ 1.5)";
 
