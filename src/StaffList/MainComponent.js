@@ -10,7 +10,6 @@ import { STAFFS, DEPARTMENTS } from '../shared/staffs';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 class Main extends Component {                 
-
     constructor(props) {                           
         super(props);      
         this.state = {           
@@ -20,9 +19,7 @@ class Main extends Component {
         };}
         onAddStaff = (newStaff) => {
             this.setState({ staffs: [...this.state.staffs, newStaff] });
-            console.log({ staffs: [...this.state.staffs, newStaff] })
-            const json = JSON.stringify({ staffs: [...this.state.staffs, newStaff] })
-            localStorage.setItem('addStaff',json)
+           
     }
     
     render() {  
