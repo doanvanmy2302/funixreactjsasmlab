@@ -1,6 +1,5 @@
 import React from 'react';
 import {Card, CardBody, CardTitle, CardText, 
-        InputGroup, InputGroupText, Input, 
         Breadcrumb, BreadcrumbItem,
       } from 'reactstrap';
 import { Link } from 'react-router-dom';
@@ -11,21 +10,20 @@ function RenderStaff ({item}) {
 
     return(
         <Card id={item.id}>
-            <CardBody className="department">
+            <CardBody >
                 <CardTitle>Họ và tên: {item.name}</CardTitle>
                 <hr/>
-                <div className="row">
-                    <div className="col-8">
+               
                         <CardText>Phòng ban: {item.department.name}</CardText>
                         <CardText>Mã nhân viên: {item.id}</CardText>
                         <CardText>Hệ số lương: {item.salaryScale}</CardText>
-                        <CardText>Số giờ làm thêm: {item.overTime}</CardText>
+                        <CardText>Số giờ làm thêm: {item.overTime}</CardText> 
+              
+                < div className="Salary">
+                   <p>Lương:</p>
+                    <p>{`${item.salary} VNĐ`} </p>
                     </div>
-                </div>
-                <InputGroup className='department'>
-                    <InputGroupText>Lương</InputGroupText>
-                    <Input value={`${item.salary} VNĐ`} disabled className="text-center"/>
-                </InputGroup>
+                
             </CardBody>
         </Card>
     );
@@ -49,14 +47,14 @@ function Salary(props) {
     
     const listRender = newStaffs.map((newStaff) =>{
         return(
-            <div  key={newStaff.id} >
+            <div className="col-12 col-md-6 col-lg-4" key={newStaff.id} >
                 <RenderStaff item={newStaff} />
             </div>
         );
     });
     
     return(
-        <div className="container container-content">
+        <div className="container ">
             <div className="row">
                 <Breadcrumb>
                     <BreadcrumbItem>
@@ -66,14 +64,13 @@ function Salary(props) {
                 </Breadcrumb>
             </div>
             <hr/>
-
-                    <h3>Bảng lương</h3>
-           
+                    <h3>Bảng lương</h3>         
             <hr/>
             <div className="row"> 
-
+         
                 {listRender}
            
+            
             </div>
             </div>
         
