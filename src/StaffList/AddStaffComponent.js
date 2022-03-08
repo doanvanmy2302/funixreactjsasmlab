@@ -319,7 +319,7 @@ class AddStaff extends Component {
           </ModalBody>
         </Modal>
         <FormGroup className="add ">
-          <Button color="Secondary" onClick={this.toggleModal}>
+          <Button className="button_AddStaff"onClick={this.toggleModal}>
             <span className="fa fa-plus" ></span>
           </Button>
         </FormGroup>

@@ -2,7 +2,9 @@
   background-color: #0d6efd;
   display: flex;
 }
-
+body {
+  background-color:rgb(240, 240, 240)
+}
 .collapse.navbar-collapse {
   margin-left: 14px;
 }
@@ -31,6 +33,10 @@
 .nav-link:hover {
   color: #fff !important;
 }
+.Dept01:hover {
+  color: pink !important;
+  background-color: rgb(236, 236, 236)
+}
 .row-content {
   margin: 0px auto;
   padding: 50px 0px 50px 0px;
@@ -40,18 +46,13 @@
 .form {
   display: flex;
 }
-/* .container-content{
+ .container-content{
   padding-top:1%;
-} */
+} 
 .add.form-group {
   margin: 0.9rem 0 0 5.5rem;
 }
-button.search.btn.btn-primary {
-  margin-left: 12px;
-}
-button.btn.btn-danger {
-  width: 52px;
-}
+
 
 .footer {
   background-color: #04c8ee;
@@ -62,7 +63,9 @@ button.btn.btn-danger {
   padding: 70px 30px 70px 30px;
   margin: 0px auto;
 }
-
+.button_AddStaff{
+  background-color: rgb(75, 72, 72)
+}
 .sideBar {
   display: flex;
 }
