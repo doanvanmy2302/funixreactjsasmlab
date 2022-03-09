@@ -33,7 +33,6 @@ class Main extends Component {
     this.props.fetchPromos();
   }
   render() {
-
     const HomePage = () => {
       return (<Home dish={this.props.dishes.dishes.filter((dish) => dish.featured)[0]}
         dishesLoading={this.props.dishes.isLoading}
