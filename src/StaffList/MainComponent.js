@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from './HeaderComponent';
-
 import Staffs from './StaffsComponent';
 import StaffDetail from './StaffDetailComponent';
 import Department from './DepartmentComponent';
@@ -14,11 +13,11 @@ class Main extends Component {
         super(props);      
         this.state = {           
             staffs: STAFFS,
-            departments: DEPARTMENTS  ,
+            departments: DEPARTMENTS ,
           
         };}
         onAddStaff = (newStaff) => {
-            this.setState({ staffs: [...this.state.staffs, newStaff] });
+            this.setState({staffs: [...this.state.staffs, newStaff] });
            
     }
     
@@ -38,8 +37,7 @@ class Main extends Component {
                         <Route exact path="/staffs" component={() => <Staffs staffs={this.state.staffs} onAddStaff={this.onAddStaff}/>} />
                         <Route path="/staffs/:staffId" component={StaffWithId} />
                         <Route exact path="/departments" 
-                            component={() => <Department departments={this.state.departments}/>} /> 
-                        
+                            component={() => <Department departments={this.state.departments}/>} />                        
                         <Route exact path="/salary" component={() => <Salary staffs={this.state.staffs}/>}/> 
                         <Redirect to='/staffs'/>
                     </Switch>
