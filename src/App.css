@@ -1,0 +1,93 @@
+.header {
+  background-color: #0d6efd;
+  display: flex;
+}
+body {
+  background-color:rgb(240, 240, 240)
+}
+.collapse.navbar-collapse {
+  margin-left: 14px;
+}
+.col-lg-2.col-md-4.col-6 {
+  margin-bottom: 12px;
+}
+
+.p-3.card {
+  margin: 12px;
+  background-color: #e9ecef;
+}
+.col-12 {
+  margin-bottom: 12px;
+}
+.Salary{
+  display: flex;
+  background-color: rgb(221, 213, 213);
+  margin-left:-20px;
+  padding-left:20px;
+  padding-top:10px;
+}
+.row-header {
+  margin: 0px auto;
+  padding: 0px auto;
+}
+.nav-link:hover {
+  color: #fff !important;
+}
+.Dept01:hover {
+  color: pink !important;
+  background-color: rgb(236, 236, 236)
+}
+.row-content {
+  margin: 0px auto;
+  padding: 50px 0px 50px 0px;
+  border-bottom: 1px ridge;
+  min-height: 400px;
+}
+.form {
+  display: flex;
+}
+ .container-content{
+  padding-top:1%;
+} 
+.add.form-group {
+  margin: 0.9rem 0 0 5.5rem;
+}
+
+
+.footer {
+  background-color: #04c8ee;
+  margin: 18px 0 auto;
+  padding: 20px 0px 20px 0px;
+}
+.jumbotron {
+  padding: 70px 30px 70px 30px;
+  margin: 0px auto;
+}
+.button_AddStaff{
+  background-color: rgb(75, 72, 72)
+}
+.sideBar {
+  display: flex;
+}
+button.btn.btn-secondary {
+  margin-left: 12px;
+}
+
+@media screen and (max-width: 991px) {
+  .form {
+    width: 108%;
+  }
+  .add.form-group {
+    margin: 0.9rem 0 0 8rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .add.form-group {
+    margin: 0.9rem 0 0 9.1rem;
+  }
+  .form {
+    width: 95%;
+  }
+}
+
