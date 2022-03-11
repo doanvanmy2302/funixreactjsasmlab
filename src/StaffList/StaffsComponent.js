@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {Card, CardBody, CardTitle, CardImg, Form, Button, Input} from 'reactstrap';
 import { Link } from 'react-router-dom';
-import AddStaff from './AddStaffComponent'
-
+// import AddStaff from './AddStaffComponent'
+import { Loading } from './LoadingComponent';
 function RenderStaff ({item, onClick}) {
     return(
         <Card id={item.id} className="Dept01">
@@ -60,7 +60,7 @@ function Staffs(props) {
                     <h3>Danh sách nhân viên</h3>
                 </div>
                 <div className="col-2 col-lg-2">
-                   <AddStaff staffList={props.staffs} onStaff={onAddStaff}/>
+                   {/* <AddStaff staffList={props.staffs} onStaff={onAddStaff}/> */}
                 </div>
 
             <div className=" col-12 col-md-10 col-lg-6">

@@ -13,41 +13,32 @@ import {
   Row,
   Col,
 } from "reactstrap";
-import { DEPARTMENTS } from "../shared/staffs";
+
 
 class AddStaff extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: "",
+      staffs: this.props.staffs,
       isModalOpen: false,
-      name: "",
-      doB: "",
-      salaryScale: "",
-      startDate: "",
-      department: "",
-      annualLeave: "",
-      overTime: "",
-      salary: "",
-      image: "/assets/images/alberto.png",
-      touched: {
-        name: false,
-        salaryScale: false,
-        annualLeave: false,
-        overTime:false,
+      staff: {
+        name: "",
+        doB: "",
+        salaryScale: 1.0,
+        startDate: "",
+        department: "Sale",
+        annualLeave: 0,
+        overTime: 0,
       },
+      
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
-    this.handleBlur = this.handleBlur.bind(this);
+    
   }
 
-  handleBlur = (field) => (e) => {
-    this.setState({
-      touched: { ...this.state.touched, [field]: true },
-    });
-  };
+ 
 
   // sự kiện lắng nghe người dùng nhập value
   handleInputChange(event) {
@@ -110,14 +101,12 @@ class AddStaff extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    const department = DEPARTMENTS.find(
-      (department) => department.id === this.state.department
-    );
+  
     const newStaff = {
       id: this.props.staffList.length,
       name: this.state.name,
       doB: this.state.doB,
-      department: department,
+      
       salaryScale: this.state.salaryScale,
       startDate: this.state.startDate,
       annualLeave: this.state.annualLeave,
