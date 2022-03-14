@@ -3,9 +3,16 @@ import {Card, CardBody, CardTitle, CardImg, Form, Button, Input} from 'reactstra
 import { Link } from 'react-router-dom';
  import AddStaff from './AddStaffComponent'
 import  Loading  from './LoadingComponent';
+import { FadeTransform, } from 'react-animation-components';
 function RenderStaff ({item, onClick}) {
     return(
-        <Card id={item.id} className="Dept01">
+      <FadeTransform
+                in
+                transformProps={{
+                    exitTransform: 'scale(0.5) translateY(-50%)'
+                }}>
+                  
+                  <Card id={item.id} className="Dept01">
             <Link to={`/staffs/${item.id}`}>
                 <CardBody>
                     <CardImg src={item.image} alt={item.name}/>
@@ -18,6 +25,8 @@ function RenderStaff ({item, onClick}) {
                 </CardBody>
             </Link>
         </Card>
+                </FadeTransform>
+        
     );
 };
 

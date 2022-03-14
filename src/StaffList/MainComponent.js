@@ -8,7 +8,7 @@ import Footer from './FooterComponent';
 import {postStaff,fetchStaffs, fetchDepartments, fetchSalary} from '../redux/ActionCreators' 
 import { Switch, Route, Redirect,withRouter  } from 'react-router-dom';
 import { connect } from 'react-redux';
-
+import {TransitionGroup, CSSTransition} from 'react-transition-group'
 const mapStateToProps = (state)=>{
     return{
         staffs: state.staffs,
@@ -47,6 +47,9 @@ class Main extends Component {
         return (        
             <div>
                 <Header />
+                <TransitionGroup>
+                    <CSSTransition key={this.props.location.key} classNames='page' timeout={500}>
+
                     <Switch>
                        
                         <Route exact path="/staffs" component={() => <Staffs staffs={this.props.staffs.staffs} 
@@ -64,6 +67,8 @@ class Main extends Component {
                         />}/> 
                         <Redirect to='/staffs'/>
                     </Switch>
+                    </CSSTransition>
+                </TransitionGroup>
                 <Footer />
             </div>
         );

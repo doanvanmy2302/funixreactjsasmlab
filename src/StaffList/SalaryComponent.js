@@ -10,13 +10,18 @@ import {
   BreadcrumbItem,
 } from "reactstrap";
 import { Link } from "react-router-dom";
-import Loading from './LoadingComponent'
+import Loading from './LoadingComponent';
+import { FadeTransform, } from 'react-animation-components';
 const luongCB = 3000000;
 const luongGio = 200000;
 
 function RenderSalary({ salary}) {
   return (
-   
+    <FadeTransform
+    in
+    transformProps={{
+        exitTransform: 'scale(0.5) translateY(-50%)'
+    }}>
       <Card>
         <CardTitle className="p-3 bg-white rounded m-2">
           {salary.name}
@@ -35,7 +40,7 @@ function RenderSalary({ salary}) {
           </CardText>
         </CardBody>
       </Card>
-   
+   </FadeTransform>
   );
 }
 
