@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
  import AddStaff from './AddStaffComponent'
 import  Loading  from './LoadingComponent';
 import { FadeTransform, } from 'react-animation-components';
-function RenderStaff ({item, onClick}) {
+function RenderStaff ({item}) {
     return(
       <FadeTransform
                 in
                 transformProps={{
-                    exitTransform: 'scale(0.5) translateY(-50%)'
+                    exitTransform: 'scale(0.1) translateY(-50%)'
                 }}>
                   
                   <Card id={item.id} className="Dept01">

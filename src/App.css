@@ -1,6 +1,7 @@
 .header {
   background-color: #0d6efd;
   display: flex;
+  padding-left: 5%;
 }
 body {
   background-color:rgb(240, 240, 240)
@@ -55,7 +56,7 @@ body {
 
 
 .footer {
-  background-color: #04c8ee;
+  background-color: #0bb4d6;
   margin: 18px 0 auto;
   padding: 20px 0px 20px 0px;
 }
@@ -71,24 +72,6 @@ body {
 }
 button.btn.btn-secondary {
   margin-left: 12px;
-}
-
-@media screen and (max-width: 991px) {
-  .form {
-    width: 108%;
-  }
-  .add.form-group {
-    margin: 0.9rem 0 0 8rem;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .add.form-group {
-    margin: 0.9rem 0 0 9.1rem;
-  }
-  .form {
-    width: 95%;
-  }
 }
 
 .page-enter {
@@ -111,4 +94,22 @@ button.btn.btn-secondary {
   opacity: 0.01;
   transform: translateX(100%);
   transition: all 500ms ease-out;
+}
+@media screen and (max-width: 991px) {
+  .form {
+    width: 105%;
+
+  }
+  .add.form-group {
+    margin: 0.9rem 0 0 8rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .add.form-group {
+    margin: 0.9rem 0 0 9.1rem;
+  }
+  .form {
+    width: 95%;
+  }
 }
