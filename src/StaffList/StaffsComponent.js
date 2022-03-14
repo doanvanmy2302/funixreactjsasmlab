@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Card, CardBody, CardTitle, CardImg, Form, Button, Input} from 'reactstrap';
 import { Link } from 'react-router-dom';
  import AddStaff from './AddStaffComponent'
-import { Loading } from './LoadingComponent';
+import  Loading  from './LoadingComponent';
 function RenderStaff ({item, onClick}) {
     return(
         <Card id={item.id} className="Dept01">
@@ -50,6 +50,27 @@ function Staffs(props) {
         </div>
         );
     });
+    if (props.isLoading) {
+      return(
+          <div className='container'>
+              <div className="row height-void"></div>
+              <div className='row'>
+                  <Loading />
+              </div>
+          </div>
+      )
+  } else if (props.errMess) {
+      return(
+          <div className='container'>
+              <div className="row height-void"></div>
+              <div className='row'>
+                  <div className='col-12'>
+                      <h3>{props.errMess}</h3>
+                  </div>
+              </div>
+          </div>
+      )
+  } else{
 
     return(
         <div className="container container-content">
@@ -89,6 +110,7 @@ function Staffs(props) {
             </div>
         </div>
     );
+  }
 }
 
 export default Staffs;

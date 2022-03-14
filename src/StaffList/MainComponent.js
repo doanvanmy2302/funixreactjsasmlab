@@ -50,12 +50,18 @@ class Main extends Component {
                     <Switch>
                        
                         <Route exact path="/staffs" component={() => <Staffs staffs={this.props.staffs.staffs} 
+                          isLoading= {this.props.staffs.isLoading}
+                          errMess= {this.props.staffs.errMess}
                           postStaff={this.props.postStaff}
                          />} />
                         <Route path="/staffs/:staffId" component={StaffWithId} />
                         <Route exact path="/departments" 
                             component={() => <Department departments={this.props.departments.departments}/>} />                        
-                        <Route exact path="/salary" component={() => <Salary salary={this.props.staffsSalary.staffsSalary}/>}/> 
+                        <Route exact path="/salary" component={() => 
+                        <Salary salary={this.props.staffsSalary.staffsSalary}
+                        isLoading={this.props.staffsSalary.isLoading}
+                        errMess={this.props.staffsSalary.errMess} 
+                        />}/> 
                         <Redirect to='/staffs'/>
                     </Switch>
                 <Footer />

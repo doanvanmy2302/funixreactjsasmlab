@@ -10,7 +10,7 @@ import {
   BreadcrumbItem,
 } from "reactstrap";
 import { Link } from "react-router-dom";
-
+import Loading from './LoadingComponent'
 const luongCB = 3000000;
 const luongGio = 200000;
 
@@ -53,27 +53,49 @@ const Salary = (props) => {
         </div>
       );
     });
+    if (props.isLoading) {
+      return(
+          <div className='container'>
+              <div className="row height-void"></div>
+              <div className='row'>
+                  <Loading />
+              </div>
+          </div>
+      )
+  } else if (props.errMess) {
+      return(
+          <div className='container'>
+              <div className="row height-void"></div>
+              <div className='row'>
+                  <div className='col-12'>
+                      <h3>{props.errMess}</h3>
+                  </div>
+              </div>
+          </div>
+      )
+  } else {
 
-  return (
-    <div className="container">
-      <div className="row">
-        <Breadcrumb>
-          <BreadcrumbItem>
-            <Link to="/staff">Nhân viên</Link>
-          </BreadcrumbItem>
-          <BreadcrumbItem active>Bảng Lương</BreadcrumbItem>
-        </Breadcrumb>
+    return (
+      <div className="container">
+        <div className="row">
+          <Breadcrumb>
+            <BreadcrumbItem>
+              <Link to="/staff">Nhân viên</Link>
+            </BreadcrumbItem>
+            <BreadcrumbItem active>Bảng Lương</BreadcrumbItem>
+          </Breadcrumb>
+        </div>
+  
+        <button
+          className="btn btn-danger"
+          onClick={() => setSortSalary(!sortSalary)}
+        >
+          Sắp xếp theo Hệ số lương
+        </button>
+        <div className="row shadow mb-3">{salary}</div>
       </div>
-
-      <button
-        className="btn btn-danger"
-        onClick={() => setSortSalary(!sortSalary)}
-      >
-        Sắp xếp theo Hệ số lương
-      </button>
-      <div className="row shadow mb-3">{salary}</div>
-    </div>
-  );
+    );
+  }
 };
 
 export default Salary;

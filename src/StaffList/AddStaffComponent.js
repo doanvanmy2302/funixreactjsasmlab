@@ -188,7 +188,7 @@ class AddStaff extends Component {
                 <Label htmlFor="salaryScale" xs={4} md={3}>Salary Scale:</Label>
                 <Col xs={8} md={9}>
                   <Control.text model=".salaryScale" id="salaryScale" name="salaryScale"
-                    defaultValue=""
+                    defaultValue="1.0"
                     className="form-control"
                     validators={{
                       required, positiveValue, isNumber
@@ -211,6 +211,7 @@ class AddStaff extends Component {
                   <Control.text model=".annualLeave" id="annualLeave" name="annualLeave"
                     defaultValue=""
                     className="form-control"
+                    placeholder="ex: 1"
                     validators={{
                       required, positiveValue, isNumber
                     }} />
@@ -231,6 +232,7 @@ class AddStaff extends Component {
                 <Col xs={8} md={9}>
                   <Control.text model=".overTime" id="overTime" name="overTime"
                     defaultValue=""
+                    placeholder="ex: 1"
                     className="form-control"
                     validators={{
                       required, positiveValue, isNumber
@@ -249,7 +251,7 @@ class AddStaff extends Component {
               </Row>
               <Row className="form-group w-25 mx-auto my-1 add">
                 <Button type="submit" value="submit" color="primary" onClick={this.toggleModal} >
-                  <span className="fa fa-plus" ></span>
+                 New Staff
                 </Button>
               </Row>
             </LocalForm>
