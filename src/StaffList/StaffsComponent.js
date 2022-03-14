@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Card, CardBody, CardTitle, CardImg, Form, Button, Input} from 'reactstrap';
 import { Link } from 'react-router-dom';
-// import AddStaff from './AddStaffComponent'
+ import AddStaff from './AddStaffComponent'
 import { Loading } from './LoadingComponent';
 function RenderStaff ({item, onClick}) {
     return(
@@ -42,9 +42,7 @@ function Staffs(props) {
           }
         } 
       };
-      const onAddStaff = (staff) => {
-        props.onAddStaff(staff);
-      };
+     
     const list = searchStaff.map((staff) => {
         return (
         <div key={staff.id} className="col-6 col-md-4 col-lg-2 staff">
@@ -60,7 +58,7 @@ function Staffs(props) {
                     <h3>Danh sách nhân viên</h3>
                 </div>
                 <div className="col-2 col-lg-2">
-                   {/* <AddStaff staffList={props.staffs} onStaff={onAddStaff}/> */}
+                    <AddStaff staffList={props.staffs} postStaff={props.postStaff}/> 
                 </div>
 
             <div className=" col-12 col-md-10 col-lg-6">

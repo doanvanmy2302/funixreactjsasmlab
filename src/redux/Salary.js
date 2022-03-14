@@ -1,6 +1,6 @@
 import * as ActionTypes from './ActionTypes';
 
-export const Salary = (state = {
+export const StaffsSalary = (state = {
         isLoading: true, 
         errMess: null,
         staffsSalary: []

@@ -8,6 +8,7 @@ export const addStaff = (staff) => ({
 });
 export const postStaff = (name, doB, salaryScale, startDate, departmentId, annualLeave, overTime) => (dispatch) => {
     const newStaff = {
+      
         name: name,
         doB: new Date(doB).toISOString(),
         salaryScale: parseFloat(salaryScale),
@@ -15,8 +16,9 @@ export const postStaff = (name, doB, salaryScale, startDate, departmentId, annua
         departmentId: departmentId,
         annualLeave: parseFloat(annualLeave),
         overTime: parseFloat(overTime),
-        image: "/asset/images/alberto.png",
+        image: "/assets/images/alberto.png",
     } 
+    dispatch(addStaff(newStaff));
     return fetch(baseUrl + 'staffs', {
         method: "POST",
         body: JSON.stringify(newStaff),

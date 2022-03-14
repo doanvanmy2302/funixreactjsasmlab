@@ -17,8 +17,8 @@ const mapStateToProps = (state)=>{
     }
 }
 const mapDispatchToProps = dispatch => ({
-    // postStaff: (name, doB, salaryScale, startDate, departmentId, annualLeave, overTime) =>
-    //  dispatch(postStaff(name, doB, salaryScale, startDate, departmentId, annualLeave, overTime)),  
+   postStaff: (name, doB, salaryScale, startDate, departmentId, annualLeave, overTime) =>
+     dispatch(postStaff(name, doB, salaryScale, startDate, departmentId, annualLeave, overTime)),  
     fetchStaffs: () => {dispatch(fetchStaffs())},
     fetchDepartments: () => {dispatch(fetchDepartments())},
     fetchSalary: () => {dispatch(fetchSalary())},
@@ -34,15 +34,15 @@ class Main extends Component {
     
     render() {  
 
-        // const StaffWithId = ({match}) => {
-        //     return (
-        //         <StaffDetail staff={this.props.staffs.staffs.find((staff) => staff.id === parseInt(match.params.staffId, 10))}
-        //             department={this.props.departments.departments} 
-        //             isLoading= {this.props.staffs.isLoading}
-        //             errMess= {this.props.staffs.errMess}
-        //         />
-        //     );
-        // };
+        const StaffWithId = ({match}) => {
+            return (
+                <StaffDetail staff={this.props.staffs.staffs.find((staff) => staff.id === parseInt(match.params.staffId, 10))}
+                    dept={this.props.departments.departments} 
+                    isLoading= {this.props.staffs.isLoading}
+                    errMess= {this.props.staffs.errMess}
+                />
+            );
+        };
 
         return (        
             <div>
@@ -50,9 +50,9 @@ class Main extends Component {
                     <Switch>
                        
                         <Route exact path="/staffs" component={() => <Staffs staffs={this.props.staffs.staffs} 
-                          
+                          postStaff={this.props.postStaff}
                          />} />
-                        {/* <Route path="/staffs/:staffId" component={StaffWithId} /> */}
+                        <Route path="/staffs/:staffId" component={StaffWithId} />
                         <Route exact path="/departments" 
                             component={() => <Department departments={this.props.departments.departments}/>} />                        
                         <Route exact path="/salary" component={() => <Salary salary={this.props.staffsSalary.staffsSalary}/>}/> 
