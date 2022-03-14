@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import {
-  Card,CardImg,
+  Card, CardImg,
   CardTitle,
   CardBody,
   CardText,
@@ -15,19 +15,19 @@ import { FadeTransform, } from 'react-animation-components';
 const luongCB = 3000000;
 const luongGio = 200000;
 
-function RenderSalary({ salary}) {
+function RenderSalary({ salary }) {
   return (
     <FadeTransform
-    in
-    transformProps={{
+      in
+      transformProps={{
         exitTransform: 'scale(0.5) translateY(-50%)'
-    }}>
+      }}>
       <Card>
         <CardTitle className="p-3 bg-white rounded m-2">
           {salary.name}
         </CardTitle>
         <CardBody>
-          <CardImg width="10%" src={salary.image} alt={salary.name}/>
+          <CardImg width="10%" src={salary.image} alt={salary.name} />
           <CardText>Mã nhân viên: {salary.id}</CardText>
           <CardText>Hệ số lương: {salary.salaryScale}</CardText>
           <CardText>Số giờ làm thêm: {salary.overTime}</CardText>
@@ -40,7 +40,7 @@ function RenderSalary({ salary}) {
           </CardText>
         </CardBody>
       </Card>
-   </FadeTransform>
+    </FadeTransform>
   );
 }
 
@@ -58,26 +58,26 @@ const Salary = (props) => {
         </div>
       );
     });
-    if (props.isLoading) {
-      return(
-          <div className='container'>
-              <div className="row height-void"></div>
-              <div className='row'>
-                  <Loading />
-              </div>
-          </div>
-      )
+  if (props.isLoading) {
+    return (
+      <div className='container'>
+        <div className="row height-void"></div>
+        <div className='row'>
+          <Loading />
+        </div>
+      </div>
+    )
   } else if (props.errMess) {
-      return(
-          <div className='container'>
-              <div className="row height-void"></div>
-              <div className='row'>
-                  <div className='col-12'>
-                      <h3>{props.errMess}</h3>
-                  </div>
-              </div>
+    return (
+      <div className='container'>
+        <div className="row height-void"></div>
+        <div className='row'>
+          <div className='col-12'>
+            <h3>{props.errMess}</h3>
           </div>
-      )
+        </div>
+      </div>
+    )
   } else {
 
     return (
@@ -90,7 +90,7 @@ const Salary = (props) => {
             <BreadcrumbItem active>Bảng Lương</BreadcrumbItem>
           </Breadcrumb>
         </div>
-  
+
         <button
           className="btn btn-danger"
           onClick={() => setSortSalary(!sortSalary)}

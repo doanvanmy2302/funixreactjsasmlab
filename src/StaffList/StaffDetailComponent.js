@@ -1,5 +1,5 @@
 import React from 'react';
-import { Breadcrumb, BreadcrumbItem, Card, CardImg, CardBody, CardTitle, CardText} from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem, CardImg,  CardTitle, CardText} from 'reactstrap';
 import dateFormat from 'dateformat';
 import { Link } from 'react-router-dom';
 
